@@ -15,6 +15,42 @@
       line-height: 1.7;
     }
     a { text-decoration: none; }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0f172a;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+    .nav-links a {
+      color: #cbd5e1;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: white; }
+    section { scroll-margin-top: 75px; }
     .hero {
       background: linear-gradient(135deg, #0f172a, #172554);
       color: white;
@@ -88,6 +124,17 @@
     .contact-card a { color: #2563eb; word-break: break-word; }
     footer { text-align: center; color: #64748b; padding: 15px 20px 35px; }
     @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 15px;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 10px 16px;
+      }
+      .nav-links a { font-size: 13px; }
+      section { scroll-margin-top: 105px; }
       .hero { padding: 50px 20px 70px; }
       .hero-inner { flex-direction: column; text-align: center; gap: 25px; }
       .profile { width: 170px; height: 170px; }
@@ -101,7 +148,20 @@
 </head>
 <body>
 
-<header class="hero">
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Muhammad Yasir Usman</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
   <div class="hero-inner">
     <img class="profile" src="profile.jpg" alt="Yasir Usman">
     <div>
@@ -112,10 +172,8 @@
         with professional guidance and personalised support.
       </p>
       <div class="buttons">
-        <a class="btn primary" href="#contact">Contact Me</a>
-        <a class="btn" href="https://www.linkedin.com/in/muhammad-yasir-usman-9aa297422/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn primary" href="#contact">Get in touch</a>
         <a class="btn" href="CV.pdf" target="_blank" rel="noopener">View CV</a>
-        <a class="btn" href="https://wa.me/923390104451" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -123,7 +181,7 @@
 
 <main class="container">
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>
       I am a dedicated Student Consultant and Overseas Education Professional with approximately
@@ -152,7 +210,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="experience">
     <h2>Professional Experience</h2>
 
     <div class="job">
@@ -197,7 +255,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills & Expertise</h2>
     <div class="skills">
       <span class="skill">Student Counselling</span>
@@ -208,6 +266,30 @@
       <span class="skill">Client Management</span>
       <span class="skill">Customer Service</span>
       <span class="skill">Communication</span>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="job">
+      <h3>B.Sc Electrical Engineering</h3>
+      <p class="muted">University of Sargodha (PIET Multan) | 2016 – 2020</p>
+    </div>
+
+    <div class="job">
+      <h3>Computer Applications</h3>
+      <p class="muted">Punjab Board of Technical Education Lahore | 2015 – 2016</p>
+    </div>
+
+    <div class="job">
+      <h3>HSSC Intermediate (Pre-Engineering)</h3>
+      <p class="muted">Sakims College, Multan | 2013 – 2015</p>
+    </div>
+
+    <div class="job">
+      <h3>SSC Matriculation (Science)</h3>
+      <p class="muted">Zakariya Public High School Kabirwala | 2011 – 2013</p>
     </div>
   </section>
 
